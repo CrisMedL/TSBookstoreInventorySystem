@@ -1,0 +1,6 @@
+# Database connection example configuration
+DB_HOST=localhost # your db host
+DB_USER=root # your db user
+DB_PASSWORD=Password # your_own_mysql_password
+DB_NAME= your_db_name # bookstore is the db name for this project
+DB_PORT=3306 # your db port that will use to access the db
