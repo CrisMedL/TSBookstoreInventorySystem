@@ -42,24 +42,7 @@ CREATE TABLE IF NOT EXISTS books(
     genre_id INT UNSIGNED NOT NULL,
     author_id INT UNSIGNED NOT NULL,
     original_price DECIMAL(8,2) NOT NULL,
-    discount_price DECIMAL(8,2) NULL,
-    has_discount  TINYINT NULL DEFAULT 0,
-    discount_id INT UNSIGNED NULL,
     stock_quantity INT NOT NULL,
     FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE,
-    FOREIGN KEY (author_id) REFERENCES authors(id) ON DELETE CASCADE,
-    FOREIGN KEY (discount_id) REFERENCES discounts(id) ON DELETE SET NULL  -- Ensures books without a discount aren't left with invalid data
-);
-
-/*
- * The `book_logs` table tracks administrative actions related to books.
- * Each log entry records the book affected, the action type, and additional details.
- * If a book is deleted, all related log entries will also be deleted automatically. Couldn't find a better way to do this \(-.-)/
- */
-CREATE TABLE IF NOT EXISTS book_logs(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    book_id INT UNSIGNED NOT NULL,
-    action_details TEXT NOT NULL, -- Detailed description of the action for management purposes
-    action_occurred_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    FOREIGN KEY (book_id) REFERENCES books(id) 
-    );
+    FOREIGN KEY (author_id) REFERENCES authors(id) ON DELETE CASCADE
+);	
