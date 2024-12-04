@@ -8,7 +8,6 @@ class Author:
         self.author_id = author_id
         self.author_full_name = author_full_name
 
-
     def addAuthor(self):
         try:
             query = "INSERT INTO authors (author_full_name) VALUES (%s)"
@@ -22,7 +21,7 @@ class Author:
 
     def updateAuthor(self):
         try:
-            query = "UPDATE authors SET author_full_name = %s WHERE id=%s"
+            query = "UPDATE authors SET author_full_name = %s WHERE id = %s"
             params = (self.author_full_name, self.author_id)
             with DatabaseConnection() as db:
                 db.execute_query(query, params)
@@ -32,7 +31,7 @@ class Author:
 
     def deleteAuthor(self):
         try:
-            query = "DELETE FROM authors WHERE id=%s"
+            query = "DELETE FROM authors WHERE id = %s"
             params = (self.author_id,)
             with DatabaseConnection() as db:
                 db.execute_query(query, params)

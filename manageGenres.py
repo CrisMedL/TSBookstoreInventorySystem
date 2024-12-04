@@ -13,6 +13,7 @@ def manageGenres():
                 print("Adding a new genre...")
                 while True:  # Loop for valid genre name input
                     try:
+                        Genre.listGenres()
                         genre_name = input("Enter Genre Name: ").strip().capitalize()
                         if not genre_name:
                             raise ValueError("Genre name cannot be empty.")
@@ -93,6 +94,3 @@ def manageGenres():
             case _:
                 print("Invalid choice. Please try again.")
 
-
-if __name__ == "__main__":
-    manageGenres()

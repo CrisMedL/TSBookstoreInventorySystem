@@ -19,12 +19,16 @@ def menu():
         choice = input("Enter your choice: ").strip()
         match choice:
             case "1":
+                clear_console_screen()
                 manageGenres()
             case "2":
+                clear_console_screen()
                 manageAuthors()
             case "3":   
+                clear_console_screen()
                 manageBooks()
             case "0":
+                clear_console_screen()
                 message = ("Saving data...\n"
                            "Data saved successfully!\n"
                            "Closing program...\n")

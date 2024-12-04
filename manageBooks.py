@@ -11,54 +11,92 @@ def manageBooks():
         
         match choice:
             case "1":
-                clear_console_screen()
-                print("Adding a new book...")
-                try:
-                    book_title = input("Enter Book Title: ").strip().title()
-                    if not book_title:
-                        raise ValueError("Book title cannot be empty.")
+                while True:
+                    clear_console_screen()
+                    print("Adding a new book...")
+                    try:
+                        # Book title input
+                        book_title = input("Enter Book Title: ").strip().title()
+                        if not book_title:
+                            raise ValueError("Book title cannot be empty.")
 
-                    Genre.listGenres
-                    genre_id = int(input("Enter Genre ID: ").strip())
-                    if genre_id <= 0:
-                        raise ValueError("Genre ID must be a positive integer.")
-                    
-                    Author.listAuthors
-                    author_id = int(input("Enter Author ID: ").strip())
-                    if author_id <= 0:
-                        raise ValueError("Author ID must be a positive integer.")
+                        
+                        Genre.listGenres()
+                        while True:
+                            try:
+                                genre_id = int(input("Enter Genre ID: ").strip())
+                                if genre_id <= 0:
+                                    print("Genre ID must be a positive integer. Please try again.")
+                                else:
+                                    break
+                            except ValueError:
+                                print("Invalid input. Please enter a valid integer for the Genre ID.")
 
-                    price = float(input("Enter Book Price: ").strip())
-                    if price < 0:
-                        raise ValueError("Price cannot be negative.")
+                       
+                        Author.listAuthors()
+                        while True:
+                            try:
+                                author_id = int(input("Enter Author ID: ").strip())
+                                if author_id <= 0:
+                                    print("Author ID must be a positive integer. Please try again.")
+                                else:
+                                    break
+                            except ValueError:
+                                print("Invalid input. Please enter a valid integer for the Author ID.")
 
-                    stock_quantity = int(input("Enter Stock Quantity: ").strip())
-                    if stock_quantity < 0:
-                        raise ValueError("Stock quantity cannot be negative.")
+                        # Price input
+                        while True:
+                            try:
+                                price = float(input("Enter Book Price: ").strip())
+                                if price < 0:
+                                    print("Price cannot be negative. Please try again.")
+                                else:
+                                    break
+                            except ValueError:
+                                print("Invalid input. Please enter a valid number for the price.")
 
-                    book = Book(
-                        book_title=book_title,
-                        genre_id=genre_id,
-                        author_id=author_id,
-                        price=price,
-                        stock_quantity=stock_quantity
-                    )
-                    book.addBook()
-                except ValueError as ve:
-                    print(f"Input Error: {ve}")
-                except Exception as e:
-                    print(f"Unexpected Error: {e}")
+                        # Stock quantity input
+                        while True:
+                            try:
+                                stock_quantity = int(input("Enter Stock Quantity: ").strip())
+                                if stock_quantity < 0:
+                                    print("Stock quantity cannot be negative. Please try again.")
+                                else:
+                                    break
+                            except ValueError:
+                                print("Invalid input. Please enter a valid integer for the stock quantity.")
+
+                        # Create and add the book
+                        book = Book(book_title=book_title, genre_id=genre_id, author_id=author_id, price=price, stock_quantity=stock_quantity)
+                        book.addBook()
+                        print("Book added successfully!")
+
+                        # Ask the user if they want to add another book
+                        add_another = input("Do you want to add another book? (yes/no): ").strip().lower()
+                        if add_another != 'yes':
+                            break  # Exit the loop and return to the main menu
+                    except ValueError as ve:
+                        print(f"Input Error: {ve}")
+                    except Exception as e:
+                        print(f"Unexpected Error: {e}")
+
+                    input("Press Enter to try again...")
+
 
             case "2":
                 clear_console_screen()
                 print("Updating an existing book...")
+                Book.listBooksByIdentifier()  # List books before allowing the user to select one
                 try:
+
                     book_id = int(input("Enter Book ID to update: ").strip())
                     if book_id <= 0:
                         raise ValueError("Book ID must be a positive integer.")
 
                     book_title = input("Enter New Book Title: ").strip().title()
+                    Genre.listGenres()
                     genre_id = int(input("Enter New Genre ID: ").strip())
+                    Author.listAuthors()
                     author_id = int(input("Enter New Author ID: ").strip())
                     price = float(input("Enter New Price: ").strip())
                     stock_quantity = int(input("Enter New Stock Quantity: ").strip())
@@ -80,6 +118,7 @@ def manageBooks():
             case "3":
                 clear_console_screen()
                 print("Deleting a book...")
+                Book.listBooks()  # List books before allowing the user to select one
                 try:
                     book_id = int(input("Enter Book ID to delete: ").strip())
                     if book_id <= 0:
@@ -96,7 +135,7 @@ def manageBooks():
                 clear_console_screen()
                 print("Listing by Identifier")
                 try:
-                    Book.sortBooksByIdentifier()
+                    Book.listBooksByIdentifier()
                 except Exception as e:
                     print(f"Error listing books: {e}")
 
@@ -104,7 +143,7 @@ def manageBooks():
                 clear_console_screen()
                 print("Listing by Title")
                 try:
-                    Book.sortBooksByTitle()
+                    Book.listBooksByTitle()
                 except Exception as e:
                     print(f"Error listing books: {e}")
 
@@ -112,7 +151,7 @@ def manageBooks():
                 clear_console_screen()
                 print("Listing by Author")
                 try:
-                    Book.sortBooksByAuthor()
+                    Book.listBooksByAuthor()
                 except Exception as e:
                     print(f"Error listing books: {e}")
 
@@ -120,7 +159,7 @@ def manageBooks():
                 clear_console_screen()
                 print("Listing by Stock")
                 try:
-                    Book.sortBooksByStock()
+                    Book.listBooksByStock()
                 except Exception as e:
                     print(f"Error listing books: {e}")
 
@@ -128,7 +167,7 @@ def manageBooks():
                 clear_console_screen()
                 print("Listing by Price")
                 try:
-                    Book.sortBooksByPrice()
+                    Book.listBooksByPrice()
                 except Exception as e:
                     print(f"Error listing books: {e}")
 
