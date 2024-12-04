@@ -96,8 +96,12 @@ def show_manage_books_menu():
         ["1", "Add Book"],
         ["2", "Update Book"],
         ["3", "Delete Book"],
-        ["4", "List and Sort Books"],
-        ["5", "Apply Discounts"],
+        ["4", "Search Book"],
+        ["5", "List Books by Identifier"],
+        ["6", "List Books by Title"],
+        ["7", "List Books by Author"],
+        ["8", "List Books by Stock"],
+        ["9", "List Books by Price"],
         ["0", "Back"]
     ]
 

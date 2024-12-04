@@ -25,12 +25,6 @@ CREATE TABLE IF NOT EXISTS authors(
     author_full_name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS discounts (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    discount_name VARCHAR(100) NOT NULL,  -- e.g., "10% Discount", "Black Friday Sale"
-    discount_percentage DECIMAL(5,2) NOT NULL CHECK (discount_percentage >= 0 AND discount_percentage <= 100)
-);
-
 /*
  * The `books` table stores details of books available in the bookstore.
  * Each book must be associated with a genre and an author.
@@ -41,7 +35,7 @@ CREATE TABLE IF NOT EXISTS books(
     title VARCHAR(100) NOT NULL,
     genre_id INT UNSIGNED NOT NULL,
     author_id INT UNSIGNED NOT NULL,
-    original_price DECIMAL(8,2) NOT NULL,
+    price DECIMAL(8,2) NOT NULL,
     stock_quantity INT NOT NULL,
     FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE,
     FOREIGN KEY (author_id) REFERENCES authors(id) ON DELETE CASCADE

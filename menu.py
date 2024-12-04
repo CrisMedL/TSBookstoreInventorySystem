@@ -4,7 +4,7 @@ from manageGenres import manageGenres
 from manageBooks import manageBooks
 
 
-
+# Function to run the program
 def run_program():
     show_opening_message()
     menu()

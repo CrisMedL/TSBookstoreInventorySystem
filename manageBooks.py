@@ -24,9 +24,6 @@ def manageBooks():
                 except Exception as e:
                     print(f"Error: {e}")
                 break
-            case "5":
-                print("Discounts")
-                break
             case "0":
                 print("Returning to main menu...")
                 os.system('cls' if os.name == 'nt' else 'clear')  # Clear console screen
