@@ -1,5 +1,5 @@
 from author import Author
-from messages_and_menus import show_manage_authors_menu
+from menu_system import show_manage_authors_menu, clear_console_screen
 import os
 
 def manageAuthors():
@@ -10,60 +10,64 @@ def manageAuthors():
 
         match choice:
             case "1":
+                clear_console_screen()
                 print("Adding a new author...")
                 while True:  # Loop for valid author name input
                     try:
-                        author_full_name = input("Enter author's full name: ").strip().upper()
+                        author_full_name = input("Enter author's full name: ").strip().title()
                         if not author_full_name:
                             raise ValueError("Author's name cannot be empty.")
                         # Here you could also add further checks like not allowing numbers, etc.
                         author = Author(author_full_name)  
                         author.addAuthor()
-                        break  # Exit loop when adding is successful
+                        break
                     except ValueError as e:
                         print(e)
 
             case "2":
+                clear_console_screen()
                 Author.listAuthors()  # List authors before asking for an ID to update
                 print("Updating an existing author...")
                 while True:  # Loop for valid author ID input
                     try:
-                        author_id = int(input("Enter the ID of the author to update: ").strip())
+                        author_id = int(input("Enter the ID of the author to update: "))
                         if author_id <= 0:
                             raise ValueError("ID must be a positive integer.")
-                        author_full_name = input("Enter updated author's name: ").strip().capitalize()
+                        author_full_name = input("Enter updated author's name: ").strip().title()
                         if not author_full_name:
                             raise ValueError("Author's name cannot be empty.")
                         author = Author(author_id, author_full_name)  
                         author.updateAuthor()
-                        break  # Exit loop when update is successful
+                        break
                     except ValueError as e:
                         print(f"Invalid input: {e}")
 
             case "3":
+                clear_console_screen()
                 print("Deleting an author...")
                 Author.listAuthors()
                 while True:  # Loop for valid author ID input
                     try:
-                        author_id = int(input("Enter the ID of the author to delete: ").strip())
+                        author_id = int(input("Enter the ID of the author to delete: "))
                         if author_id <= 0:
                             raise ValueError("ID must be a positive integer.")
                         author = Author(author_id=author_id)  
                         author.deleteAuthor()
-                        break  # Exit loop when deletion is successful
+                        break
                     except ValueError as e:
                         print(f"Invalid input: {e}")
 
             case "4":
+                clear_console_screen()
                 print("Listing all authors...")
                 try:
                     Author.listAuthors()
                 except Exception as e:
                     print(f"Error: {e}")
-                break
+
             case "0":
                 print("Returning to main menu...")
-                os.system('cls' if os.name == 'nt' else 'clear')  # Clear console screen
+                clear_console_screen()
                 break
 
             case _:

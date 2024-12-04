@@ -9,6 +9,9 @@ import pyfiglet  # For generating ASCII art
 from termcolor import colored  # For adding colors to the ASCII art
 
 
+def clear_console_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def typewriter_message(message):
     
     for char in message:
@@ -29,7 +32,7 @@ def show_opening_message():
 
     typewriter_message(message)
 
-    os.system('cls' if os.name == 'nt' else 'clear') # Clear console screen
+    clear_console_screen() # Clear console screen
 
     # Generate the ASCII art text
     raw_text = pyfiglet.figlet_format("Welcome to\n C&L Bookstore", font="big", justify="center")

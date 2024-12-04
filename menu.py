@@ -1,4 +1,4 @@
-from messages_and_menus import *
+from menu_system import *
 from manageAuthors import manageAuthors
 from manageGenres import manageGenres
 from manageBooks import manageBooks
@@ -9,6 +9,10 @@ def run_program():
     show_opening_message()
     menu()
 
+def clear_console_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+# Main menu function (for later calling)
 def menu():
     while True:
         show_main_menu()
