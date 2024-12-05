@@ -4,6 +4,8 @@ from author import Author
 from genre import Genre
 import os
 
+
+
 def manageBooks():
     while True:
         show_manage_books_menu()
@@ -13,6 +15,7 @@ def manageBooks():
                 while True:
                     clear_console_screen()
                     print("Adding a new book...")
+
                     try:
                         # Book title input
                         book_title = input("Enter Book Title: ").strip().title()
@@ -26,27 +29,47 @@ def manageBooks():
                                 
                                 genre = Genre(genre_id=genre_id)
                                 # Check if the genre exists in the database
-                                if not genre.checkGenreExists():  # You'll need to implement checkGenreExists method
-                                    print("Genre not found! Please add it first.")
-                                    continue  # If genre does not exist, ask the user to try again
-                                
-                                # If everything is valid, break the loop to proceed
-                                break  # Exit the loop and proceed with the next steps
-                            
+                                if not genre.checkGenreExistsById():  # Check if genre exists
+                                    print("Genre not found! Would you like to add it?")
+                                    add_genre_choice = input("Enter 'yes' to add this genre or 'no' to select another: ").strip().lower()
+                                    if add_genre_choice == 'yes':
+                                        # Prompt the user to enter the genre name
+                                        new_genre_name = input("Enter the new genre name: ").strip().title()
+                                        genre = Genre(genre_name=new_genre_name)  # Create a new Genre object
+                                        genre.addGenre()  # Add the new genre to the database
+                                        genre_id = genre.genre_id  # Update the genre_id after adding the genre
+                                        print(f"New genre '{new_genre_name}' added successfully.")
+                                        break  # Break out of the loop after adding the genre
+                                    else:
+                                        print("Please select a different genre ID.")
+                                else:
+                                    break  # Genre exists, proceed to the next step
                             except ValueError:
                                 print("Invalid input. Please enter a valid integer.")
-
 
                         Author.listAuthors()
                         while True:
                             try:
                                 author_id = input("Enter author ID: ").strip()
-                                # Check if the genre exists in the database
-                                if not Author.checkAuthorExists(author_id):  # You will need to implement checkGenreExists method
-                                    print("Genre not found! Please add it first.")
-                                    break
+
+                                author = Author(author_id=author_id)
+                                if not author.checkAuthorExists():  
+                                    print("Author not found! Would you like to add it?")
+                                    add_genre_choice = input("Enter 'yes' to add this author or 'no' to select another: ").strip().lower()
+                                    # Check if the author exists in the database
+                                    if add_genre_choice == 'yes': 
+                                        new_genre_name = input("Enter the new genre name: ").strip().title()
+                                        genre = Genre(genre_name=new_genre_name)  # Create a new Genre object
+                                        genre.addGenre()  # Add the new genre to the database
+                                        genre_id = genre.genre_id  # Update the genre_id after adding the genre
+                                        print(f"New genre '{new_genre_name}' added successfully.")
+                                        break  # Break out of the loop after adding the genre
+                                    else:
+                                        print("Please select a different genre ID.")
+                                else:
+                                    break  # Genre exists, proceed to the next step
                             except ValueError:
-                                print("Invalid input.")
+                                print("Invalid input. Please enter a valid integer.")
 
                         # Price input
                         while True:

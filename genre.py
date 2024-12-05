@@ -41,9 +41,22 @@ class Genre:
                 print("Error: This genre cannot be deleted because they are referenced by one or more books in the system.")
 
 
+    def checkGenreExistsByName(self):
+        query = "SELECT * FROM genres WHERE genre_name = %s"
+        params = (self.genre_name,)
+        try:
+            with DatabaseConnection() as db:
+                result = db.execute_query(query, params)
+                if result:  # If a result is returned, the genre exists
+                    return True
+                else:
+                    return False
+        except Exception as e:
+            print(f"Error checking genre: {e}")
+            return False
 
-    def checkGenreExists(self):
-        query = "SELECT * FROM genres WHERE id = %s"
+    def checkGenreExistsById(self):
+        query = "SELECT * FROM genres WHERE  = %s"
         params = (self.genre_id,)
         try:
             with DatabaseConnection() as db:

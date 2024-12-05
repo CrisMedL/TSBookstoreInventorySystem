@@ -37,7 +37,7 @@ def update_genre_prompt():
                 raise ValueError("ID must be a positive integer.")
             genre = Genre(genre_id=genre_id)
                                 # Check if the genre exists in the database
-            if not genre.checkGenreExists():
+            if not genre.checkGenreExistsById():
                 break
             else:
                 genre_name = input("Enter New Genre Name: ").strip().capitalize()
@@ -64,7 +64,7 @@ def delete_genre_prompt():
             genre = Genre(genre_id=genre_id)
 
             # Check if the genre exists in the database
-            if not genre.checkGenreExists():
+            if not genre.checkGenreExistsById():
                 print("Genre does not exist in the database. Cannot delete it.")
                 break  # Exit the loop if genre does not exist
             else:
