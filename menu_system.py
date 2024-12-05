@@ -24,14 +24,6 @@ def typewriter_message(message):
     time.sleep(2)
 
 def show_opening_message():
-
-    message= ("Initializing system...\n"
-              "Doing some other things...\n"
-              "Almost there...\n"
-              "All good to go!\n")
-
-    typewriter_message(message)
-
     clear_console_screen() # Clear console screen
 
     # Generate the ASCII art text

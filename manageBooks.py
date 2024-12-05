@@ -23,24 +23,30 @@ def manageBooks():
                         while True:
                             try:
                                 genre_id = int(input("Enter Genre ID: ").strip())
-                                if genre_id <= 0:
-                                    print("Genre ID must be a positive integer. Please try again.")
-                                else:
-                                    break
+                                
+                                genre = Genre(genre_id=genre_id)
+                                # Check if the genre exists in the database
+                                if not genre.checkGenreExists():  # You'll need to implement checkGenreExists method
+                                    print("Genre not found! Please add it first.")
+                                    continue  # If genre does not exist, ask the user to try again
+                                
+                                # If everything is valid, break the loop to proceed
+                                break  # Exit the loop and proceed with the next steps
+                            
                             except ValueError:
-                                print("Invalid input. Please enter a valid integer for the Genre ID.")
+                                print("Invalid input. Please enter a valid integer.")
 
-                       
+
                         Author.listAuthors()
                         while True:
                             try:
-                                author_id = int(input("Enter Author ID: ").strip())
-                                if author_id <= 0:
-                                    print("Author ID must be a positive integer. Please try again.")
-                                else:
+                                author_id = input("Enter author ID: ").strip()
+                                # Check if the genre exists in the database
+                                if not Author.checkAuthorExists(author_id):  # You will need to implement checkGenreExists method
+                                    print("Genre not found! Please add it first.")
                                     break
                             except ValueError:
-                                print("Invalid input. Please enter a valid integer for the Author ID.")
+                                print("Invalid input.")
 
                         # Price input
                         while True:
@@ -165,7 +171,7 @@ def manageBooks():
             case "3": # Option 3
                 clear_console_screen()
                 print("Deleting a book...")
-                Book.listBooks()  # List books before allowing the user to select one
+                Book.listBooksByIdentifier()  # List books before allowing the user to select one
                 try:
                     book_id = int(input("Enter Book ID to delete: ").strip())
                     if book_id <= 0:
@@ -225,6 +231,3 @@ def manageBooks():
 
             case _:
                 print("Invalid choice. Please try again.")
-
-if __name__ == "__main__":
-    manageBooks()

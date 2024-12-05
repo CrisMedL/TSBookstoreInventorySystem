@@ -9,15 +9,14 @@ class Genre:
     def addGenre(self):
         try:
             query = "INSERT INTO genres (genre_name) VALUES (%s)"
-            # We create a tuple with a single element because execute_query expects a tuple 
-            # for parameter substitution. Since we are passing only one parameter, we convert it 
-            # to a tuple (e.g., in INSERT, DELETE, or UPDATE queries).
-            params = (self.genre_name,) # A trailing comma converts the params into a tuple  
+            params = (self.genre_name,)  
             with DatabaseConnection() as db:
                 db.execute_query(query, params)
                 print("Genre added successfully.")
         except Exception as e:
-            print(f"Error adding genre: {e}")
+            if e.errno == 1062:
+                print("Error: This genre name already exists in the system.")
+
 
     def updateGenre(self):
         try:
@@ -38,7 +37,24 @@ class Genre:
                 db.execute_query(query, params)
                 print("Genre deleted successfully.")
         except Exception as e:
-            print(f"Error deleting genre: {e}")
+            if e.errno == 1451:  # Foreign key constraint error
+                print("Error: This genre cannot be deleted because they are referenced by one or more books in the system.")
+
+
+
+    def checkGenreExists(self):
+        query = "SELECT * FROM genres WHERE id = %s"
+        params = (self.genre_id,)
+        try:
+            with DatabaseConnection() as db:
+                result = db.execute_query(query, params)
+                if result:# If a result is returned, the genre exists
+                    return True
+                else:
+                    return False
+        except Exception as e:
+            print(f"Error checking genre: {e}")
+            return False
 
     # Doesn't need parameters so we make it a static method
     @staticmethod

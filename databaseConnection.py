@@ -30,7 +30,6 @@ class DatabaseConnection:
                 database=os.getenv('DB_NAME'),
                 port=int(os.getenv('DB_PORT', 3306))  # Default to 3306
             )
-            print("Connection successful!")
 
         except mysql.connector.Error as db_error:
             if db_error.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -62,8 +61,8 @@ class DatabaseConnection:
             # For non-SELECT queries, commit changes
             self.connection.commit()
 
-        except Exception as e:
-            print(f"Query execution error: {e}")
+        except Exception:
+            print("Something went wrong... here")
             self.connection.rollback()  # Rollback in case of error
             raise
 
@@ -72,9 +71,8 @@ class DatabaseConnection:
         # Close the database connection.
         if self.connection and self.connection.is_connected():
             self.connection.close()
-            print("Connection closed.")
         else:
-            print("Connection is not open.")
+            print("There is no open connection to DB.")
 
     def __enter__(self):
         # This allows us to use 'with' statement for queries.

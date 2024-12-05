@@ -11,12 +11,13 @@ class Author:
     def addAuthor(self):
         try:
             query = "INSERT INTO authors (author_full_name) VALUES (%s)"
-            params = (self.author_full_name)
+            params = (self.author_full_name,)
             with DatabaseConnection() as db:
                 db.execute_query(query, params)
                 print("Author added successfully.")
         except Exception as e:
-            print(f"Error adding author: {e}")
+            if e.errno == 1062:
+                print("Error: This author name already exists in the system.")
 
 
     def updateAuthor(self):
@@ -37,7 +38,23 @@ class Author:
                 db.execute_query(query, params)
                 print("Author deleted successfully.")
         except Exception as e:
-            print(f"Error deleting author: {e}")
+            if e.errno == 1451:  # Foreign key constraint error
+                print("Error: This author cannot be deleted because they are referenced by one or more books in the system.")
+
+
+    def checkAuthorExists(self):
+        query = "SELECT id FROM authors WHERE id = %s"
+        params = (self.author_id,)
+        try:
+            with DatabaseConnection() as db:
+                result = db.execute_query(query, params)
+                if result:  # If a result is returned, the author exists
+                    return True
+                else:
+                    return False
+        except Exception as e:
+            print(f"Error checking author: {e}")
+            return False
 
     # Doesn't need parameters so we make it a static method
     @staticmethod
@@ -47,7 +64,7 @@ class Author:
             with DatabaseConnection() as db:
                 authors = db.execute_query(query)
                 # Prepare the data for tabulation
-                headers = ["ID", "First Name", "Last Name"]
+                headers = ["ID", "Author Name"]
                 # We gather table information as a tuple
                 author_data = [(author[0], author[1]) for author in authors]
 
