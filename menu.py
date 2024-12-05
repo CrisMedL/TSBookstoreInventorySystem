@@ -29,9 +29,7 @@ def menu():
                 manageBooks()
             case "0":
                 clear_console_screen()
-                message = ("Saving data...\n"
-                           "Data saved successfully!\n"
-                           "Closing program...\n")
+                message = ("Closing program...\n")
                 typewriter_message(message)
                 break
             case _:

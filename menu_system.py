@@ -20,7 +20,7 @@ def typewriter_message(message):
         if char != "\n":
             time.sleep(0.05)
         else:
-            time.sleep(1.5)
+            time.sleep(0.8)
     time.sleep(2)
 
 def show_opening_message():
@@ -105,6 +105,24 @@ def show_manage_books_menu():
         ["7", "List Books by Stock"],
         ["8", "List Books by Price"],
         ["0", "Back"]
+    ]
+
+    menu_table = tabulate.tabulate(menu_data, headers=["Option", "Description"], 
+                                   tablefmt="pretty",
+                                   numalign="center",
+                                   stralign="center",
+                                   colalign=("center","center"))
+    print(menu_table)
+
+def show_update_books_menu():
+    menu_data = [
+        ["1", "Update Book Title"],
+        ["2", "Update Book Genre"],
+        ["3", "Update Book Author"],
+        ["4", "Update Book Price"],
+        ["5", "Update Book Stock"],
+        ["0", "Go Back"]
+
     ]
 
     menu_table = tabulate.tabulate(menu_data, headers=["Option", "Description"], 
