@@ -13,13 +13,12 @@ def manageBooks():
         show_manage_books_menu()
         choice = input("Please select the number associated with the action you want to perform: ").strip()
         match choice:
-            case "1": # Option 1
+            case "1": 
                 while True:
                     clear_console_screen()
                     print("Adding a new book...")
 
                     try:
-                        # Book title input
                         book_title = input("Enter Book Title: ").title().strip()
                         if not book_title:
                             raise ValueError("Book title cannot be empty.")
@@ -29,8 +28,7 @@ def manageBooks():
                             try:
                                 genre_name = input("Enter Genre name: ").title().strip()
                                 genre = Genre(genre_name=genre_name)
-                                # Check if the genre exists in the database
-                                if not genre.checkGenreExistsByName():  # Check if genre exists
+                                if not genre.checkGenreExistsByName(): 
                                     print("Genre not found! Please add it to the database to proceed.")
                                     time.sleep(1.5)
                                     clear_console_screen()
@@ -62,7 +60,6 @@ def manageBooks():
                             except ValueError:
                                 print("Invalid input. Please enter a valid integer.")
 
-                        # Price input
                         while True:
                             try:
                                 price = float(input("Enter Book Price: ").strip())
@@ -73,7 +70,6 @@ def manageBooks():
                             except ValueError:
                                 print("Invalid input. Please enter a valid number for the price.")
 
-                        # Stock quantity input
                         while True:
                             try:
                                 stock_quantity = int(input("Enter Stock Quantity: ").strip())
@@ -89,7 +85,6 @@ def manageBooks():
                         book.addBook()
                         print("Book added successfully!")
 
-                        # Ask the user if they want to add another book
                         add_another = input("Do you want to add another book? (yes/no): ").strip().lower()
                         if add_another != 'yes':
                             break  # Exit the loop and return to the main menu
@@ -101,22 +96,20 @@ def manageBooks():
                     input("Press Enter to try again...")
 
 
-            case "2":  # Option 2: Update an existing book
+            case "2":  
                 clear_console_screen()
                 print("Updating an existing book...")
-                Book.listBooksByIdentifier()  # List books before allowing the user to select one
+                Book.listBooksByIdentifier()
                 try:
                     book_id = int(input("Enter Book ID to update: ").strip())
                     if book_id <= 0: 
                         raise ValueError("Book ID must be a positive integer.")
                     else:
-                        # Show the book details before proceeding
                         clear_console_screen()
                         print(f"Currently modifying the following book:")
                         book = Book(book_id=book_id)  
                         book.fetchSingleBook() # Fetch and display book details
 
-                        # Show the update menu
                         show_update_books_menu()
                         update_choice = input("Please select the number associated with the action you want to perform: ").strip()
                         match update_choice:
@@ -182,10 +175,10 @@ def manageBooks():
                     print(f"Unexpected Error: {e}")
 
             
-            case "3": # Option 3: Deleting an existing book
+            case "3": 
                 clear_console_screen()
                 print("Deleting a book...")
-                Book.listBooksByIdentifier()  # List books before allowing the user to select one
+                Book.listBooksByIdentifier()  
                 try:
                     book_id = int(input("Enter Book ID to delete: ").strip())
                     if book_id <= 0:
@@ -253,7 +246,6 @@ def manageBooks():
 
             case _:
                 print("Invalid choice. Please try again.")
-
 
 if __name__ == "__main__":
     manageBooks()

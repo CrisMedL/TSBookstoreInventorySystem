@@ -8,7 +8,7 @@ def add_author_prompt():
     while True:  # Loop for valid author name input
         try:
             Author.listAuthors()
-            author_full_name = input("Enter author's full name (or 'x' to cancel): ").strip()
+            author_full_name = input("Enter author's full name (or 'x' to cancel): ").strip().title()
             
             if author_full_name.lower() == 'x':
                 print("Exiting the add author option...")
@@ -56,7 +56,7 @@ def update_author_prompt():
             if not author.checkAuthorExists():
                 print("Author does not exist. Please try again.")
             else:
-                author_full_name = input("Enter updated author's name (or 'x' to cancel): ").strip()
+                author_full_name = input("Enter updated author's name (or 'x' to cancel): ").strip().title()
                 
                 if author_full_name.lower() == 'x':
                     print("Exiting the update author option...")

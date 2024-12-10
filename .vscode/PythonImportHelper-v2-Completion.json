@@ -115,15 +115,7 @@
         "documentation": {}
     },
     {
-        "label": "show_manage_genres_menu",
-        "importPath": "menu_system",
-        "description": "menu_system",
-        "isExtraImport": true,
-        "detail": "menu_system",
-        "documentation": {}
-    },
-    {
-        "label": "clear_console_screen",
+        "label": "*",
         "importPath": "menu_system",
         "description": "menu_system",
         "isExtraImport": true,
@@ -286,7 +278,7 @@
         "kind": 2,
         "importPath": "manageAuthors",
         "description": "manageAuthors",
-        "peekOfCode": "def add_author_prompt():\n    clear_console_screen()\n    print(\"Adding a new author...\")\n    while True:  # Loop for valid author name input\n        try:\n            Author.listAuthors()\n            author_full_name = input(\"Enter author's full name (or 'x' to cancel): \").strip()\n            if author_full_name.lower() == 'x':\n                print(\"Exiting the add author option...\")\n                return  # Exit the function to return to the previous menu",
+        "peekOfCode": "def add_author_prompt():\n    clear_console_screen()\n    print(\"Adding a new author...\")\n    while True:  # Loop for valid author name input\n        try:\n            Author.listAuthors()\n            author_full_name = input(\"Enter author's full name (or 'x' to cancel): \").strip().title()\n            if author_full_name.lower() == 'x':\n                print(\"Exiting the add author option...\")\n                return  # Exit the function to return to the previous menu",
         "detail": "manageAuthors",
         "documentation": {}
     },
@@ -331,7 +323,7 @@
         "kind": 2,
         "importPath": "manageBooks",
         "description": "manageBooks",
-        "peekOfCode": "def manageBooks():\n    while True:\n        show_manage_books_menu()\n        choice = input(\"Please select the number associated with the action you want to perform: \").strip()\n        match choice:\n            case \"1\": # Option 1\n                while True:\n                    clear_console_screen()\n                    print(\"Adding a new book...\")\n                    try:",
+        "peekOfCode": "def manageBooks():\n    while True:\n        show_manage_books_menu()\n        choice = input(\"Please select the number associated with the action you want to perform: \").strip()\n        match choice:\n            case \"1\": \n                while True:\n                    clear_console_screen()\n                    print(\"Adding a new book...\")\n                    try:",
         "detail": "manageBooks",
         "documentation": {}
     },
@@ -349,7 +341,7 @@
         "kind": 2,
         "importPath": "manageGenres",
         "description": "manageGenres",
-        "peekOfCode": "def update_genre_prompt():\n    clear_console_screen()\n    print(\"Updating an existing genre...\")\n    try:\n        Genre.listGenres()  # List genres before allowing the user to select one\n    except Exception as e:\n        print(f\"Error listing genres: {e}\")\n    while True:  # Loop for valid genre ID input\n        try:\n            genre_id = input(\"Enter the ID of the genre to update (or 'x' to exit): \").strip()",
+        "peekOfCode": "def update_genre_prompt():\n    clear_console_screen()\n    print(\"Updating an existing genre...\")\n    try:\n        Genre.listGenres()  # List genres before allowing the user to select one\n    except Exception as e:\n        print(f\"Error listing genres: {e}\")\n    while True:  # Loop for valid genre ID input\n        try:\n            genre_id = input(\"Enter the ID of the genre to update (or 'x' to exit): \").strip().lower()",
         "detail": "manageGenres",
         "documentation": {}
     },

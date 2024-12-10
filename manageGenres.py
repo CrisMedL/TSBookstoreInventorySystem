@@ -1,4 +1,4 @@
-from menu_system import show_manage_genres_menu, clear_console_screen
+from menu_system import *
 import os
 from genre import Genre
 
@@ -39,7 +39,7 @@ def update_genre_prompt():
     
     while True:  # Loop for valid genre ID input
         try:
-            genre_id = input("Enter the ID of the genre to update (or 'x' to exit): ").strip()
+            genre_id = input("Enter the ID of the genre to update (or 'x' to exit): ").strip().lower()
             if genre_id == 'x':
                 print("Exiting the update genre option...")
                 return  # Exit the function to return to the previous menu
@@ -57,7 +57,7 @@ def update_genre_prompt():
             if not genre_name:
                 raise ValueError("Genre name cannot be empty.")
             
-            genre = Genre(genre_id=genre_id, genre_name=genre_name.capitalize())
+            genre = Genre(genre_id=genre_id, genre_name=genre_name)
             genre.updateGenre()
             print("Genre updated successfully!")
             break  # Exit loop when updating is successful
@@ -125,7 +125,7 @@ def manageGenres():
                 list_genres_prompt()
             case "0":
                 print("Returning to main menu...")
-                os.system('cls' if os.name == 'nt' else 'clear')  # Clear console screen
+                clear_console_screen()  # Clear console screen
                 break
 
             case _:

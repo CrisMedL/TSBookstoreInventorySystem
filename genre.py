@@ -56,7 +56,7 @@ class Genre:
             return False
 
     def checkGenreExistsById(self):
-        query = "SELECT * FROM genres WHERE  = %s"
+        query = "SELECT * FROM genres WHERE id = %s"
         params = (self.genre_id,)
         try:
             with DatabaseConnection() as db:
