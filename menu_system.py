@@ -96,7 +96,7 @@ def show_manage_books_menu():
         ["6", "List Books by Author"],
         ["7", "List Books by Stock"],
         ["8", "List Books by Price"],
-        ["9", "List Low Stock Books"]
+        ["9", "List Low Stock Books"],
         ["0", "Back"]
     ]
 
