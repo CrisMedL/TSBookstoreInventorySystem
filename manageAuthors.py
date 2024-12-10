@@ -1,6 +1,5 @@
 from author import Author
 from menu_system import show_manage_authors_menu, clear_console_screen
-import os
 
 
 def add_author_prompt():

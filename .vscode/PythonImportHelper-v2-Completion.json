@@ -1,0 +1,509 @@
+[
+    {
+        "label": "run_program",
+        "importPath": "menu",
+        "description": "menu",
+        "isExtraImport": true,
+        "detail": "menu",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseConnection",
+        "importPath": "databaseConnection",
+        "description": "databaseConnection",
+        "isExtraImport": true,
+        "detail": "databaseConnection",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseConnection",
+        "importPath": "databaseConnection",
+        "description": "databaseConnection",
+        "isExtraImport": true,
+        "detail": "databaseConnection",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseConnection",
+        "importPath": "databaseConnection",
+        "description": "databaseConnection",
+        "isExtraImport": true,
+        "detail": "databaseConnection",
+        "documentation": {}
+    },
+    {
+        "label": "tabulate",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tabulate",
+        "description": "tabulate",
+        "detail": "tabulate",
+        "documentation": {}
+    },
+    {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "errorcode",
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "isExtraImport": true,
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Author",
+        "importPath": "author",
+        "description": "author",
+        "isExtraImport": true,
+        "detail": "author",
+        "documentation": {}
+    },
+    {
+        "label": "Author",
+        "importPath": "author",
+        "description": "author",
+        "isExtraImport": true,
+        "detail": "author",
+        "documentation": {}
+    },
+    {
+        "label": "show_manage_authors_menu",
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "isExtraImport": true,
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "clear_console_screen",
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "isExtraImport": true,
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "isExtraImport": true,
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "show_manage_genres_menu",
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "isExtraImport": true,
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "clear_console_screen",
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "isExtraImport": true,
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "isExtraImport": true,
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "Book",
+        "importPath": "book",
+        "description": "book",
+        "isExtraImport": true,
+        "detail": "book",
+        "documentation": {}
+    },
+    {
+        "label": "Book",
+        "importPath": "book",
+        "description": "book",
+        "isExtraImport": true,
+        "detail": "book",
+        "documentation": {}
+    },
+    {
+        "label": "Genre",
+        "importPath": "genre",
+        "description": "genre",
+        "isExtraImport": true,
+        "detail": "genre",
+        "documentation": {}
+    },
+    {
+        "label": "Genre",
+        "importPath": "genre",
+        "description": "genre",
+        "isExtraImport": true,
+        "detail": "genre",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "manageGenres",
+        "description": "manageGenres",
+        "isExtraImport": true,
+        "detail": "manageGenres",
+        "documentation": {}
+    },
+    {
+        "label": "manageGenres",
+        "importPath": "manageGenres",
+        "description": "manageGenres",
+        "isExtraImport": true,
+        "detail": "manageGenres",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "manageAuthors",
+        "description": "manageAuthors",
+        "isExtraImport": true,
+        "detail": "manageAuthors",
+        "documentation": {}
+    },
+    {
+        "label": "manageAuthors",
+        "importPath": "manageAuthors",
+        "description": "manageAuthors",
+        "isExtraImport": true,
+        "detail": "manageAuthors",
+        "documentation": {}
+    },
+    {
+        "label": "manageBooks",
+        "importPath": "manageBooks",
+        "description": "manageBooks",
+        "isExtraImport": true,
+        "detail": "manageBooks",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "pyfiglet",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyfiglet",
+        "description": "pyfiglet",
+        "detail": "pyfiglet",
+        "documentation": {}
+    },
+    {
+        "label": "colored",
+        "importPath": "termcolor",
+        "description": "termcolor",
+        "isExtraImport": true,
+        "detail": "termcolor",
+        "documentation": {}
+    },
+    {
+        "label": "Author",
+        "kind": 6,
+        "importPath": "author",
+        "description": "author",
+        "peekOfCode": "class Author:\n    def __init__(self, author_id=None, author_full_name=None):\n        self.author_id = author_id\n        self.author_full_name = author_full_name\n    def addAuthor(self):\n        try:\n            query = \"INSERT INTO authors (author_full_name) VALUES (%s)\"\n            params = (self.author_full_name,)\n            with DatabaseConnection() as db:\n                db.execute_query(query, params)",
+        "detail": "author",
+        "documentation": {}
+    },
+    {
+        "label": "Book",
+        "kind": 6,
+        "importPath": "book",
+        "description": "book",
+        "peekOfCode": "class Book:\n    def __init__(self, book_id=None, book_title=None, genre_id=None, author_id=None, price=None, stock_quantity=None):\n        self.book_id = book_id\n        self.book_title = book_title\n        self.genre_id = genre_id\n        self.author_id = author_id\n        self.price = price\n        self.stock_quantity = stock_quantity\n    def addBook(self):\n        query = \"INSERT INTO books (title ,genre_id, author_id, price, stock_quantity) VALUES (%s,%s,%s,%s,%s)\"",
+        "detail": "book",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseConnection",
+        "kind": 6,
+        "importPath": "databaseConnection",
+        "description": "databaseConnection",
+        "peekOfCode": "class DatabaseConnection:\n    def __init__(self):\n        # Initialize connection and cursor attributes for later use.\n        self.connection = None\n        self.cursor = None\n    def get_cursor(self):\n        if self.connection and self.connection.is_connected():\n            self.cursor = self.connection.cursor()\n            return self.cursor\n        else:",
+        "detail": "databaseConnection",
+        "documentation": {}
+    },
+    {
+        "label": "Genre",
+        "kind": 6,
+        "importPath": "genre",
+        "description": "genre",
+        "peekOfCode": "class Genre:\n    def __init__(self,genre_id=None, genre_name= None):\n        self.genre_id = genre_id\n        self.genre_name = genre_name\n    def addGenre(self):\n        try:\n            query = \"INSERT INTO genres (genre_name) VALUES (%s)\"\n            params = (self.genre_name,)  \n            with DatabaseConnection() as db:\n                db.execute_query(query, params)",
+        "detail": "genre",
+        "documentation": {}
+    },
+    {
+        "label": "add_author_prompt",
+        "kind": 2,
+        "importPath": "manageAuthors",
+        "description": "manageAuthors",
+        "peekOfCode": "def add_author_prompt():\n    clear_console_screen()\n    print(\"Adding a new author...\")\n    while True:  # Loop for valid author name input\n        try:\n            Author.listAuthors()\n            author_full_name = input(\"Enter author's full name (or 'x' to cancel): \").strip()\n            if author_full_name.lower() == 'x':\n                print(\"Exiting the add author option...\")\n                return  # Exit the function to return to the previous menu",
+        "detail": "manageAuthors",
+        "documentation": {}
+    },
+    {
+        "label": "update_author_prompt",
+        "kind": 2,
+        "importPath": "manageAuthors",
+        "description": "manageAuthors",
+        "peekOfCode": "def update_author_prompt():\n    clear_console_screen()  # List authors before asking for an ID to update\n    print(\"Updating an existing author...\")\n    try:\n        Author.listAuthors()\n    except Exception as e:\n        print(f\"Error listing authors: {e}\")\n    while True:  # Loop for valid author ID input\n        try:\n            author_id = input(\"Enter the ID of the author to update (or 'x' to cancel): \").strip().lower()",
+        "detail": "manageAuthors",
+        "documentation": {}
+    },
+    {
+        "label": "delete_author_prompt",
+        "kind": 2,
+        "importPath": "manageAuthors",
+        "description": "manageAuthors",
+        "peekOfCode": "def delete_author_prompt():\n    clear_console_screen()\n    print(\"Deleting an author...\")\n    Author.listAuthors()  # List authors before allowing the user to select one\n    while True:  # Loop for valid author ID input\n        try:\n            author_id_input = input(\"Enter the ID of the author to delete (or 'x' to cancel): \").strip()\n            if author_id_input.lower() == 'x':\n                print(\"Exiting the delete author option...\")\n                return  # Exit the function to return to the previous menu",
+        "detail": "manageAuthors",
+        "documentation": {}
+    },
+    {
+        "label": "list_authors_prompt",
+        "kind": 2,
+        "importPath": "manageAuthors",
+        "description": "manageAuthors",
+        "peekOfCode": "def list_authors_prompt():\n    clear_console_screen()\n    print(\"Listing all authors...\")\n    try:\n        Author.listAuthors()\n    except Exception as e:\n        print(f\"Error: {e}\")\ndef manageAuthors():\n    # Function to display options for managing authors and handle user input.\n    while True:",
+        "detail": "manageAuthors",
+        "documentation": {}
+    },
+    {
+        "label": "manageAuthors",
+        "kind": 2,
+        "importPath": "manageAuthors",
+        "description": "manageAuthors",
+        "peekOfCode": "def manageAuthors():\n    # Function to display options for managing authors and handle user input.\n    while True:\n        show_manage_authors_menu()\n        choice = input(\"Please select the number associated with the action you want to perform: \").strip()\n        match choice:\n            case \"1\":\n                add_author_prompt()\n            case \"2\":\n                update_author_prompt()",
+        "detail": "manageAuthors",
+        "documentation": {}
+    },
+    {
+        "label": "manageBooks",
+        "kind": 2,
+        "importPath": "manageBooks",
+        "description": "manageBooks",
+        "peekOfCode": "def manageBooks():\n    while True:\n        show_manage_books_menu()\n        choice = input(\"Please select the number associated with the action you want to perform: \").strip()\n        match choice:\n            case \"1\": # Option 1\n                while True:\n                    clear_console_screen()\n                    print(\"Adding a new book...\")\n                    try:",
+        "detail": "manageBooks",
+        "documentation": {}
+    },
+    {
+        "label": "add_genre_prompt",
+        "kind": 2,
+        "importPath": "manageGenres",
+        "description": "manageGenres",
+        "peekOfCode": "def add_genre_prompt():\n    clear_console_screen()\n    print(\"Adding a new genre...\")\n    while True:  # Loop for valid genre name input\n        try:\n            Genre.listGenres()\n            genre_name = input(\"Enter Genre Name (or 'x' to cancel): \").strip().title()\n            if genre_name.lower() == 'x':\n                print(\"Exiting the add genre option...\")\n                return  # Exit the function to return to the previous menu",
+        "detail": "manageGenres",
+        "documentation": {}
+    },
+    {
+        "label": "update_genre_prompt",
+        "kind": 2,
+        "importPath": "manageGenres",
+        "description": "manageGenres",
+        "peekOfCode": "def update_genre_prompt():\n    clear_console_screen()\n    print(\"Updating an existing genre...\")\n    try:\n        Genre.listGenres()  # List genres before allowing the user to select one\n    except Exception as e:\n        print(f\"Error listing genres: {e}\")\n    while True:  # Loop for valid genre ID input\n        try:\n            genre_id = input(\"Enter the ID of the genre to update (or 'x' to exit): \").strip()",
+        "detail": "manageGenres",
+        "documentation": {}
+    },
+    {
+        "label": "delete_genre_prompt",
+        "kind": 2,
+        "importPath": "manageGenres",
+        "description": "manageGenres",
+        "peekOfCode": "def delete_genre_prompt():\n    clear_console_screen()\n    print(\"Deleting a genre...\")\n    Genre.listGenres()  # List genres before allowing the user to select one\n    while True:  # Loop for valid genre ID input\n        try:\n            genre_id_input = input(\"Enter the ID of the genre to delete (or 'x' to cancel): \").strip()\n            if genre_id_input.lower() == 'x':\n                print(\"Exiting the delete genre option...\")\n                return  # Exit the function to return to the previous menu",
+        "detail": "manageGenres",
+        "documentation": {}
+    },
+    {
+        "label": "list_genres_prompt",
+        "kind": 2,
+        "importPath": "manageGenres",
+        "description": "manageGenres",
+        "peekOfCode": "def list_genres_prompt():\n    clear_console_screen()\n    print(\"Listing all genres...\")\n    try:\n        Genre.listGenres()\n    except Exception as e:\n        print(f\"Error: {e}\")\ndef manageGenres():\n    # Function to display options for managing genres and handle user input.\n    while True:",
+        "detail": "manageGenres",
+        "documentation": {}
+    },
+    {
+        "label": "manageGenres",
+        "kind": 2,
+        "importPath": "manageGenres",
+        "description": "manageGenres",
+        "peekOfCode": "def manageGenres():\n    # Function to display options for managing genres and handle user input.\n    while True:\n        show_manage_genres_menu()\n        choice = input(\"Please select the number associated with the action you want to perform: \").strip()\n        match choice:\n            case \"1\":\n                add_genre_prompt()\n            case \"2\":\n                update_genre_prompt()",
+        "detail": "manageGenres",
+        "documentation": {}
+    },
+    {
+        "label": "run_program",
+        "kind": 2,
+        "importPath": "menu",
+        "description": "menu",
+        "peekOfCode": "def run_program():\n    show_opening_message()\n    menu()\ndef clear_console_screen():\n    os.system('cls' if os.name == 'nt' else 'clear')\n# Main menu function (for later calling)\ndef menu():\n    while True:\n        show_main_menu()\n        choice = input(\"Enter your choice: \").strip()",
+        "detail": "menu",
+        "documentation": {}
+    },
+    {
+        "label": "clear_console_screen",
+        "kind": 2,
+        "importPath": "menu",
+        "description": "menu",
+        "peekOfCode": "def clear_console_screen():\n    os.system('cls' if os.name == 'nt' else 'clear')\n# Main menu function (for later calling)\ndef menu():\n    while True:\n        show_main_menu()\n        choice = input(\"Enter your choice: \").strip()\n        match choice:\n            case \"1\":\n                clear_console_screen()",
+        "detail": "menu",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "kind": 2,
+        "importPath": "menu",
+        "description": "menu",
+        "peekOfCode": "def menu():\n    while True:\n        show_main_menu()\n        choice = input(\"Enter your choice: \").strip()\n        match choice:\n            case \"1\":\n                clear_console_screen()\n                manageGenres()\n            case \"2\":\n                clear_console_screen()",
+        "detail": "menu",
+        "documentation": {}
+    },
+    {
+        "label": "clear_console_screen",
+        "kind": 2,
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "peekOfCode": "def clear_console_screen():\n    os.system('cls' if os.name == 'nt' else 'clear')\ndef typewriter_message(message):\n    for char in message:\n        sys.stdout.write(char)\n        sys.stdout.flush()\n        if char != \"\\n\":\n            time.sleep(0.05)\n        else:\n            time.sleep(0.8)",
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "typewriter_message",
+        "kind": 2,
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "peekOfCode": "def typewriter_message(message):\n    for char in message:\n        sys.stdout.write(char)\n        sys.stdout.flush()\n        if char != \"\\n\":\n            time.sleep(0.05)\n        else:\n            time.sleep(0.8)\n    time.sleep(2)\ndef show_opening_message():",
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "show_opening_message",
+        "kind": 2,
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "peekOfCode": "def show_opening_message():\n    clear_console_screen() # Clear console screen\n    # Generate the ASCII art text\n    raw_text = pyfiglet.figlet_format(\"Welcome to\\n C&L Bookstore\", font=\"big\", justify=\"center\")\n    # Add color to the text\n    formatted_text = colored(raw_text, color=\"red\")\n    # Print the colored ASCII art text\n    print(formatted_text)    \n    time.sleep(4)  # For effect purposes\n    os.system('cls' if os.name == 'nt' else 'clear')",
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "show_main_menu",
+        "kind": 2,
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "peekOfCode": "def show_main_menu():\n    menu_data = [\n            [\"1\", \"Manage Genres\"],\n            [\"2\", \"Manage Authors\"],\n            [\"3\", \"Manage Books\"],\n            [\"0\", \"Exit\"]\n        ]\n        # Format the menu using tabulate\n    menu_table = tabulate.tabulate(menu_data, headers=[\"Option\", \"Description\"], \n                                   tablefmt=\"pretty\",",
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "show_manage_genres_menu",
+        "kind": 2,
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "peekOfCode": "def show_manage_genres_menu():\n    menu_data = [\n        [\"1\", \"Add Genre\"],\n        [\"2\", \"Update Genre\"],\n        [\"3\", \"Delete Genre\"],\n        [\"4\", \"List Genres\"],\n        [\"0\", \"Back\"]\n    ]\n    menu_table = tabulate.tabulate(menu_data, headers=[\"Option\", \"Description\"], \n                                   tablefmt=\"pretty\",",
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "show_manage_authors_menu",
+        "kind": 2,
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "peekOfCode": "def show_manage_authors_menu():\n    menu_data = [\n        [\"1\", \"Add Author\"],\n        [\"2\", \"Update Author\"],\n        [\"3\", \"Delete Author\"],\n        [\"4\", \"List Authors\"],\n        [\"0\", \"Back\"]\n    ]\n    menu_table = tabulate.tabulate(menu_data, headers=[\"Option\", \"Description\"], \n                                   tablefmt=\"pretty\",",
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "show_manage_books_menu",
+        "kind": 2,
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "peekOfCode": "def show_manage_books_menu():\n    menu_data = [\n        [\"1\", \"Add Book\"],\n        [\"2\", \"Update Book\"],\n        [\"3\", \"Delete Book\"],\n        [\"4\", \"List Books by Identifier\"],\n        [\"5\", \"List Books by Title\"],\n        [\"6\", \"List Books by Author\"],\n        [\"7\", \"List Books by Stock\"],\n        [\"8\", \"List Books by Price\"],",
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "show_update_books_menu",
+        "kind": 2,
+        "importPath": "menu_system",
+        "description": "menu_system",
+        "peekOfCode": "def show_update_books_menu():\n    menu_data = [\n        [\"1\", \"Update Book Title\"],\n        [\"2\", \"Update Book Genre\"],\n        [\"3\", \"Update Book Author\"],\n        [\"4\", \"Update Book Price\"],\n        [\"5\", \"Update Book Stock\"],\n        [\"0\", \"Go Back\"]\n    ]\n    menu_table = tabulate.tabulate(menu_data, headers=[\"Option\", \"Description\"], ",
+        "detail": "menu_system",
+        "documentation": {}
+    },
+    {
+        "label": "book_id",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "book_id = int(input(\"Please give me a book ID: \").strip())\nbook = Book(book_id=book_id)\nbook_details = book.fetchSingleBook()",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "book",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "book = Book(book_id=book_id)\nbook_details = book.fetchSingleBook()",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "book_details",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "book_details = book.fetchSingleBook()",
+        "detail": "test",
+        "documentation": {}
+    }
+]

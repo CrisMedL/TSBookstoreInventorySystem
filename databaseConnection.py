@@ -40,7 +40,8 @@ class DatabaseConnection:
                 print(f"Error: {db_error}")
             raise  # Re-raise exception after logging
             
-
+    # This function expects a tuple, so for query that only have one parameter, they mush have a trailing comma at the end
+    # for it to work properly
     def execute_query(self, query, parameters=None):
         try:
             cursor = self.get_cursor()
