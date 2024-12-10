@@ -31,12 +31,16 @@ CREATE TABLE IF NOT EXISTS authors(
  * If a genre or author is deleted, all associated books will also be deleted automatically.
  */
 CREATE TABLE IF NOT EXISTS books(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
-    genre_id INT UNSIGNED NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    # utf8 is the character set, 
+    # general is the collation type (comparing strings)
+    # ci is for case-insensitive
+    title VARCHAR(255) COLLATE utf8mb4_general_ci NOT NULL UNIQUE,
+    genre_id INT UNSIGNED NOT NULL ,
     author_id INT UNSIGNED NOT NULL,
-    price DECIMAL(8,2) NOT NULL,
-    stock_quantity INT NOT NULL,
-    FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE,
-    FOREIGN KEY (author_id) REFERENCES authors(id) ON DELETE CASCADE
+    price DECIMAL(10, 2) NOT NULL ,
+    stock_quantity INT NOT NULL ,
+    FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE RESTRICT,
+    FOREIGN KEY (author_id) REFERENCES authors(id) ON DELETE RESTRICT
 );	
+
