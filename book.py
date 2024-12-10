@@ -152,6 +152,7 @@ class Book:
         except Exception as e:
             print(f"Error listing books: {e}")
 
+    # Doesn't need parameters so we make it a static method
     @staticmethod
     def listBooksByAuthor():
         query = """SELECT books.id, books.title, genres.genre_name, authors.author_full_name, books.price, books.stock_quantity
@@ -163,12 +164,8 @@ class Book:
             with DatabaseConnection() as db:
                 books = db.execute_query(query)
                 
-                # Prepare the data for tabulation
-                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  # Table headers
-                # Process each book row
+                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  
                 book_data = [(book[0], book[1], book[2], book[3], book[4], book[5]) for book in books]
-
-                # Use tabulate to format and print the table
                 print(tabulate.tabulate(book_data, headers=headers, tablefmt="pretty"))
         
         except Exception as e:
@@ -186,12 +183,8 @@ class Book:
             with DatabaseConnection() as db:
                 books = db.execute_query(query)
                 
-                # Prepare the data for tabulation
-                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  # Table headers
-                # Process each book row
+                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  
                 book_data = [(book[0], book[1], book[2], book[3], book[4], book[5]) for book in books]
-
-                # Use tabulate to format and print the table
                 print(tabulate.tabulate(book_data, headers=headers, tablefmt="pretty"))
         
         except Exception as e:
@@ -209,12 +202,8 @@ class Book:
             with DatabaseConnection() as db:
                 books = db.execute_query(query)
                 
-                # Prepare the data for tabulation
-                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  # Table headers
-                # Process each book row
+                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  
                 book_data = [(book[0], book[1], book[2], book[3], book[4], book[5]) for book in books]
-
-                # Use tabulate to format and print the table
                 print(tabulate.tabulate(book_data, headers=headers, tablefmt="pretty"))
         
         except Exception as e:
@@ -230,12 +219,11 @@ class Book:
         try:
             with DatabaseConnection() as db:
                 books = db.execute_query(query)
-                # Prepare the data for tabulation
-                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  # Table headers
-                # Process each book row
-                book_data = [(book[0], book[1], book[2], book[3], book[4], book[5]) for book in books]
-                # Use tabulate to format and print the table
+
+                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  
+                book_data = [(book[0], book[1], book[2], book[3], book[4], book[5]) for book in books] 
                 print(tabulate.tabulate(book_data, headers=headers, tablefmt="pretty"))
+
         except Exception as e:
             print(f"Error listing books: {e}")
             
