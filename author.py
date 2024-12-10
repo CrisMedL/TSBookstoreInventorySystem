@@ -42,6 +42,36 @@ class Author:
                 print("Error: This author cannot be deleted because they are referenced by one or more books in the system.")
 
 
+    def checkAuthorExistsByName(self):
+        query = "SELECT * FROM genres WHERE author_full_name = %s"
+        params = (self.author_full_name,)
+        try:
+            with DatabaseConnection() as db:
+                result = db.execute_query(query, params)
+                if result:
+                    return True
+                else:
+                    return False
+        except Exception as e:
+            print(f"Error checking genre: {e}")
+            return False
+
+
+    def fetchAuthorId(self):
+        query = "SELECT id FROM authors WHERE author_full_name = %s"
+        params = (self.author_full_name,)
+        try:
+            with DatabaseConnection() as db:
+                result = db.execute_query(query, params)
+                if result:
+                    return result[0][0]
+                else:
+                    return None
+        except Exception as e:
+            print(f"Error fetching genre ID: {e}")
+            return None
+
+
     def checkAuthorExists(self):
         query = "SELECT id FROM authors WHERE id = %s"
         params = (self.author_id,)

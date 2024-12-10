@@ -50,7 +50,7 @@ class Book:
         except Exception as e:
             print(f"Error updating book: {e}")
     
-    def updateBookPrice(self,book_id, price):
+    def updateBookPrice(self):
         query = "UPDATE books SET price = %s WHERE id = %s"
         params = (self.price,self.book_id)
         try:
@@ -99,7 +99,6 @@ class Book:
                 headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]
                 book_data = [(book[0], book[1], book[2], book[3], book[4], book[5])]
                 print(tabulate.tabulate(book_data, headers=headers, tablefmt="pretty"))
-
                 # Return the book data for further use
                 return book
 
@@ -221,6 +220,22 @@ class Book:
         except Exception as e:
             print(f"Error listing books: {e}")
         
-    # def listLowStockBooks():
-
+    @staticmethod
+    def listLowStockBooks():
+        query = """SELECT books.id, books.title, genres.genre_name, authors.author_full_name, books.price, books.stock_quantity
+                FROM books
+                JOIN genres ON books.genre_id = genres.id
+                JOIN authors ON books.author_id = authors.id
+                WHERE books.stock_quantity <= 10"""
+        try:
+            with DatabaseConnection() as db:
+                books = db.execute_query(query)
+                # Prepare the data for tabulation
+                headers = ["ID", "Book Title", "Genre", "Author", "Price $", "Stock"]  # Table headers
+                # Process each book row
+                book_data = [(book[0], book[1], book[2], book[3], book[4], book[5]) for book in books]
+                # Use tabulate to format and print the table
+                print(tabulate.tabulate(book_data, headers=headers, tablefmt="pretty"))
+        except Exception as e:
+            print(f"Error listing books: {e}")
             

@@ -2,6 +2,8 @@ from menu_system import *
 from book import Book
 from author import Author
 from genre import Genre
+from manageGenres import *
+from manageAuthors import * 
 import os
 
 
@@ -18,56 +20,45 @@ def manageBooks():
 
                     try:
                         # Book title input
-                        book_title = input("Enter Book Title: ").strip().title()
+                        book_title = input("Enter Book Title: ").title().strip()
                         if not book_title:
                             raise ValueError("Book title cannot be empty.")
 
                         Genre.listGenres()
                         while True:
                             try:
-                                genre_id = int(input("Enter Genre ID: ").strip())
-                                
-                                genre = Genre(genre_id=genre_id)
+                                genre_name = input("Enter Genre name: ").title().strip()
+                                genre = Genre(genre_name=genre_name)
                                 # Check if the genre exists in the database
-                                if not genre.checkGenreExistsById():  # Check if genre exists
-                                    print("Genre not found! Would you like to add it?")
-                                    add_genre_choice = input("Enter 'yes' to add this genre or 'no' to select another: ").strip().lower()
-                                    if add_genre_choice == 'yes':
-                                        # Prompt the user to enter the genre name
-                                        new_genre_name = input("Enter the new genre name: ").strip().title()
-                                        genre = Genre(genre_name=new_genre_name)  # Create a new Genre object
-                                        genre.addGenre()  # Add the new genre to the database
-                                        genre_id = genre.genre_id  # Update the genre_id after adding the genre
-                                        print(f"New genre '{new_genre_name}' added successfully.")
-                                        break  # Break out of the loop after adding the genre
-                                    else:
-                                        print("Please select a different genre ID.")
+                                if not genre.checkGenreExistsByName():  # Check if genre exists
+                                    print("Genre not found! Please add it to the database to proceed.")
+                                    time.sleep(1.5)
+                                    clear_console_screen()
+                                    add_genre_prompt()
+                                    genre_id = genre.fetchGenreId()
+                                    break                                      
                                 else:
-                                    break  # Genre exists, proceed to the next step
-                            except ValueError:
-                                print("Invalid input. Please enter a valid integer.")
+                                    genre_id = genre.fetchGenreId()
+                                    break
+                            except Exception:
+                                print("Invalid input. Please enter a valid genre name.")
 
                         Author.listAuthors()
                         while True:
                             try:
-                                author_id = input("Enter author ID: ").strip()
-
-                                author = Author(author_id=author_id)
+                                author_name = input("Now select an author: ").title().strip()
+                                author = Author(author_full_name=author_name)
                                 if not author.checkAuthorExists():  
-                                    print("Author not found! Would you like to add it?")
-                                    add_genre_choice = input("Enter 'yes' to add this author or 'no' to select another: ").strip().lower()
-                                    # Check if the author exists in the database
-                                    if add_genre_choice == 'yes': 
-                                        new_genre_name = input("Enter the new genre name: ").strip().title()
-                                        genre = Genre(genre_name=new_genre_name)  # Create a new Genre object
-                                        genre.addGenre()  # Add the new genre to the database
-                                        genre_id = genre.genre_id  # Update the genre_id after adding the genre
-                                        print(f"New genre '{new_genre_name}' added successfully.")
-                                        break  # Break out of the loop after adding the genre
-                                    else:
-                                        print("Please select a different genre ID.")
+                                    print("Author not found! Please add it to the database and then pick the appropriate author")
+                                    time.sleep(1.5)
+                                    clear_console_screen()
+                                    add_author_prompt()
+                                    author_id = author.fetchAuthorId()
+                                    break  
                                 else:
-                                    break  # Genre exists, proceed to the next step
+                                    author_id = genre.fetchGenreId()
+                                    break
+
                             except ValueError:
                                 print("Invalid input. Please enter a valid integer.")
 
@@ -168,7 +159,7 @@ def manageBooks():
                                     raise ValueError("Price cannot be negative.")
                                 else:
                                     book = Book(book_id=book_id, price=new_price)
-                                    book.updateBookPrice(book_id, new_price)
+                                    book.updateBookPrice()
                                     print("Price updated successfully!")
                             case "5":  # Update stock quantity
                                 clear_console_screen()
@@ -191,7 +182,7 @@ def manageBooks():
                     print(f"Unexpected Error: {e}")
 
             
-            case "3": # Option 3
+            case "3": # Option 3: Deleting an existing book
                 clear_console_screen()
                 print("Deleting a book...")
                 Book.listBooksByIdentifier()  # List books before allowing the user to select one
@@ -231,7 +222,7 @@ def manageBooks():
                 except Exception as e:
                     print(f"Error listing books: {e}")
 
-            case "7": # Option 7
+            case "7": 
                 clear_console_screen()
                 print("Listing by Stock")
                 try:
@@ -239,13 +230,21 @@ def manageBooks():
                 except Exception as e:
                     print(f"Error listing books: {e}")
 
-            case "8": # Option
+            case "8": 
                 clear_console_screen()
                 print("Listing by Price")
                 try:
                     Book.listBooksByPrice()
                 except Exception as e:
                     print(f"Error listing books: {e}")
+            
+            case "9":
+                clear_console_screen()
+                print("Listing low stock books:")
+                try:
+                    Book.listLowStockBooks()
+                except Exception as e:
+                    print(f"Error listing books: {e}") 
 
             case "0":
                 print("Returning to main menu...")
@@ -254,3 +253,7 @@ def manageBooks():
 
             case _:
                 print("Invalid choice. Please try again.")
+
+
+if __name__ == "__main__":
+    manageBooks()

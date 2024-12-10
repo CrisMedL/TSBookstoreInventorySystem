@@ -68,6 +68,20 @@ class Genre:
         except Exception as e:
             print(f"Error checking genre: {e}")
             return False
+        
+    def fetchGenreId(self):
+        query = "SELECT id FROM genres WHERE genre_name = %s"
+        params = (self.genre_name,)
+        try:
+            with DatabaseConnection() as db:
+                result = db.execute_query(query, params)
+                if result:
+                    return result[0][0]
+                else:
+                    return None
+        except Exception as e:
+            print(f"Error fetching genre ID: {e}")
+            return None
 
     # Doesn't need parameters so we make it a static method
     @staticmethod
